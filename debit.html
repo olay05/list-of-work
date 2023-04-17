@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phone number formater</title>
+    <link rel="stylesheet" href="debit.css">
+  </head>
+  <body>
+    <img src="Mstercard-PayPal (1).png" alt="Mstercard-PayPal">
+    
+    <div>
+      <h1>Debit Card Holder</h1>
+    
+  
+  <input type="text" name="cardNumber" id="enter" placeholder="Enter input">
+  <input type="text" name="cvv" id="cvv" placeholder="Enter cvv">
+  <input type="text" name="date" id="date" placeholder="--/--">
+  <!-- <input type="text" name="cardNumber" id="name" placeholder="EnterName"> -->
+    </div>
+    <script>
+      const inputField = document.querySelector("#enter");
+      inputField.addEventListener("keyup", (e) => {
+        if (e.key === "Backspace"){
+          input.textContent+=e.key
+        }
+        if ( e.key === "Backspace"){
+          input.textContent-=e.key
+        }
+        if (inputField.value.length == 4)
+          inputField.value = inputField.value + " ";
+        if (inputField.value.length == 9)
+          inputField.value = inputField.value + " ";
+          if (inputField.value.length == 14)
+          inputField.value = inputField.value + " ";
+          if (inputField.value.length == 19)
+          document.querySelector("#cvv").focus();
+          if (inputField.value.length == 0)
+          document.querySelector("#enter").focus();
+        //   inputField.value = inputField.value + " ";
+        
+      });
+
+      
+      const validField = document.getElementById("cvv");
+      validField.addEventListener("keyup", (e) => {
+        if (e.key === "Backspace"){
+          input.textContent+=e.key
+        }
+        if ( e.key === "Backspace"){
+          input.textContent-=e.key
+        }
+        if(validField.value.length == 3)
+        document.getElementById("date").focus();
+        
+  
+  
+
+      });
+
+      const dateField = document.querySelector("#date");
+      dateField.addEventListener("keyup", (e) => {
+        if (e.key === "Backspace"){
+          input.textContent+=e.key
+        }
+        if ( e.key === "Backspace"){
+          input.textContent-=e.key
+        }
+        if(dateField.value.length == 2)
+        dateField.value =dateField.value + "/";
+        if(dateField.value.length == 5)
+        document.getElementById("cvv").focus();
+
+
+        // document.getElementById("name").focus();
+        // if(dateField.value.length == 0) 
+        
+       
+        
+      });
+
+      // const nameField = document.querySelector("#name");
+      // nameField.addEventListener("keyup", () => {
+      //   if(nameField.value.length == 5)
+      //   inputField.value = inputField.value + " ";
+      //   if(nameField.value.length == 5)
+      //   inputField.value = inputField.value + " ";
+      //   if(nameField.value.length == 0)
+      //   document.getElementById("date").focus();
+
+      // });
+
+    </script>
+  </body>
+</html>
